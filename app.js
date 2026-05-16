@@ -365,24 +365,148 @@ function initBackToTop() {
   return btn;
 }
 
+// ============ FLOATING STYLES (inline) ============
+function injectFloatingStyles() {
+  var s = document.createElement('style');
+  s.textContent = '.floating-buttons{position:fixed;bottom:24px;right:24px;display:flex;flex-direction:column;gap:12px;z-index:900}' +
+    '.fab{width:48px;height:48px;border-radius:50%;border:1px solid var(--border);background:var(--bg-card);color:var(--text-primary);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;box-shadow:0 4px 20px rgba(0,0,0,.3);opacity:0;transform:translateY(20px)}' +
+    '.fab.visible{opacity:1;transform:translateY(0)}' +
+    '.fab:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 20px var(--accent-glow)}' +
+    '.fab-prompt{background:var(--accent);color:#000;border-color:var(--accent)}' +
+    '.fab-prompt:hover{box-shadow:0 0 30px var(--accent-glow)}' +
+    '.prompt-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease}' +
+    '.prompt-overlay.open{opacity:1;pointer-events:all}' +
+    '.prompt-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;max-width:680px;width:92%;max-height:90vh;overflow-y:auto;transform:translateY(20px);transition:transform .3s ease}' +
+    '.prompt-overlay.open .prompt-card{transform:translateY(0)}' +
+    '.prompt-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}' +
+    '.prompt-card-title{font-family:var(--font-display);font-size:1.2rem;font-weight:600}' +
+    '.prompt-close{background:none;border:none;color:var(--text-muted);font-size:1.5rem;cursor:pointer;padding:4px 8px}' +
+    '.prompt-textarea{width:100%;min-height:200px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;color:var(--text-primary);font-family:var(--font-body);font-size:.82rem;line-height:1.6;resize:vertical;outline:none}' +
+    '.prompt-textarea:focus{border-color:var(--accent)}' +
+    '.prompt-copy-row{display:flex;align-items:center;gap:12px;margin:16px 0}' +
+    '.prompt-copy-btn{padding:10px 24px;background:var(--accent);color:#000;border:none;border-radius:8px;font-size:.85rem;font-family:var(--font-display);cursor:pointer}' +
+    '.prompt-copied{font-size:.8rem;color:var(--accent);opacity:0;transition:opacity .3s ease}' +
+    '.prompt-copied.show{opacity:1}' +
+    '.prompt-divider{border:none;border-top:1px solid var(--border);margin:20px 0}' +
+    '.prompt-ai-label{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px}' +
+    '.prompt-ai-buttons{display:flex;flex-wrap:wrap;gap:10px}' +
+    '.prompt-ai-btn{padding:10px 20px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:.85rem;text-decoration:none;transition:all .3s ease;cursor:pointer;display:inline-flex;align-items:center;gap:6px}' +
+    '.prompt-ai-btn:hover{border-color:var(--accent);color:var(--accent)}';
+  document.head.appendChild(s);
+}
+
+// ============ BACK TO TOP ============
+function initBackToTop() {
+  var btn = document.createElement('button');
+  btn.className = 'fab';
+  btn.innerHTML = '&#x2191;';
+  btn.title = '回到頂部';
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  return btn;
+}
+
+// ============ PROMPT GENERATOR ============
+var CHART_CONTEXT = '你係一個精通西洋占星同中國八字命理嘅資深分析師。以下係一個人嘅完整命盤數據。\n\n【出生資料】2002年1月11日 19:30 香港 男\n\n【星盤】ASC獅子12度 MC金牛9度\n太陽摩羯21度(6宮) 月亮射手26度(5宮) 水星水瓶10度(6宮)\n金星摩羯20度(6宮灼傷) 火星雙魚24度(8宮)\n木星巨蟹9度Rx(11宮曜升) 土星雙子8度Rx(10宮)\n互溶月亮木星 最tight土星三分海王星\n\n【八字】辛巳辛丑己卯癸酉 白蠟金\n己土身弱喜火土 食傷5次33% 正印1次(巳藏丙極弱)\n偏印正官正財完全缺席 三合金局巳酉丑 卯酉沖\n華蓋太極貴人童子將星金神文昌亢宿值日\n\n【大運】戊戌22至31歲全面幫身\n【法達】木大時主加太陽細限(2025.6至2027.3)\n【太陽弧】SA月亮合本命太陽0度28分\n【日返2026】7和12宮主飛入8宮';
+
+var PAGE_PROMPTS = {
+  'index.html': '請做整體命盤分析概覽。',
+  'core.html': '請深入分析五大核心主題：身份認同、消耗、保護、時間、愛。',
+  'gifts.html': '請分析三大天賦同三大陰影嘅根源同關係。',
+  'domains.html': '請分析十大人生領域。',
+  'timeline.html': '請分析時間線：22至31歲逐年、18個月預測、大運總覽。結合八字大運、法達盤、日返盤、太陽弧。',
+  'map.html': '請做完整人生地圖策略。',
+  'data.html': '請解讀原始數據中嘅核心模式。'
+};
+
+function initPromptGenerator() {
+  var currentPage = location.pathname.split('/').pop() || 'index.html';
+  var pageInstruction = PAGE_PROMPTS[currentPage] || PAGE_PROMPTS['index.html'];
+  var fullPrompt = CHART_CONTEXT + '\n\n【分析要求】' + pageInstruction;
+
+  var overlay = document.createElement('div');
+  overlay.className = 'prompt-overlay';
+  overlay.innerHTML =
+    '<div class="prompt-card">' +
+      '<div class="prompt-card-header">' +
+        '<div class="prompt-card-title">提示詞已生成</div>' +
+        '<button class="prompt-close">&times;</button>' +
+      '</div>' +
+      '<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:16px;">撳「複製」然後揀一個 AI 平台貼上去就得。</p>' +
+      '<textarea class="prompt-textarea" readonly></textarea>' +
+      '<div class="prompt-copy-row">' +
+        '<button class="prompt-copy-btn">複製提示詞</button>' +
+        '<span class="prompt-copied">&#x2713; 已複製</span>' +
+      '</div>' +
+      '<hr class="prompt-divider">' +
+      '<div class="prompt-ai-label">貼去邊個 AI？</div>' +
+      '<div class="prompt-ai-buttons">' +
+        '<a class="prompt-ai-btn" href="https://gemini.google.com" target="_blank">Gemini</a>' +
+        '<a class="prompt-ai-btn" href="https://chat.deepseek.com" target="_blank">DeepSeek</a>' +
+        '<a class="prompt-ai-btn" href="https://www.doubao.com" target="_blank">豆包</a>' +
+        '<a class="prompt-ai-btn" href="https://copilot.microsoft.com" target="_blank">Copilot</a>' +
+        '<a class="prompt-ai-btn" href="https://grok.com" target="_blank">Grok</a>' +
+      '</div>' +
+    '</div>';
+  document.body.appendChild(overlay);
+
+  var textarea = overlay.querySelector('.prompt-textarea');
+  textarea.value = fullPrompt;
+
+  var copyBtn = overlay.querySelector('.prompt-copy-btn');
+  var copiedEl = overlay.querySelector('.prompt-copied');
+
+  function doCopy() {
+    textarea.select();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(textarea.value).then(showCopied).catch(function() {
+        document.execCommand('copy');
+        showCopied();
+      });
+    } else {
+      document.execCommand('copy');
+      showCopied();
+    }
+  }
+
+  function showCopied() {
+    copiedEl.classList.add('show');
+    setTimeout(function() { copiedEl.classList.remove('show'); }, 2000);
+  }
+
+  function open() {
+    overlay.classList.add('open');
+    doCopy();
+  }
+
+  function close() {
+    overlay.classList.remove('open');
+  }
+
+  overlay.querySelector('.prompt-close').addEventListener('click', close);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+  copyBtn.addEventListener('click', doCopy);
+
+  return open;
+}
+
 // ============ FLOATING BUTTONS ============
 function initFloatingButtons() {
+  injectFloatingStyles();
   var container = document.createElement('div');
   container.className = 'floating-buttons';
-
   var topBtn = initBackToTop();
   var openPrompt = initPromptGenerator();
-
   var promptFab = document.createElement('button');
   promptFab.className = 'fab fab-prompt visible';
   promptFab.innerHTML = '&#x2728;';
   promptFab.title = '生成提示詞';
   promptFab.addEventListener('click', openPrompt);
-
   container.appendChild(topBtn);
   container.appendChild(promptFab);
   document.body.appendChild(container);
-
   window.addEventListener('scroll', function() {
     if (window.scrollY > 300) {
       topBtn.classList.add('visible');
@@ -391,6 +515,7 @@ function initFloatingButtons() {
     }
   });
 }
+
 
 // ============ INIT ALL ============
 document.addEventListener('DOMContentLoaded', function() {
