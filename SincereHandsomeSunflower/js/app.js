@@ -187,15 +187,15 @@ function initProgressBar() {
 
 // ============ AI Q&A ============
 var AI_ANSWERS = {
-  '\u6027\u683c': '\u4f60\u5609\u547d\u5c40\u5beb\u5497\u5幾\u6a23\u5609\uff1a\u5df1\u571f\u65e5\u4e3b\u5b64\u7acb\u2014\u2014\u4f60\u5609\u300c\u6211\u300d\u5197\u540c\u4f34\u5197\u4fdd\u8b77\uff0c\u4f46\u4f60\u5609\u98df\u50b7\u6975\u65fa\uff085\u6b21\uff09\u4ee3\u8868\u4f60\u7528\u5514\u505c\u7523\u51fa\u5617\u8b49\u660e\u81ea\u5df1\u5b58\u5728\u3002\u8a73\u60c5\u53bb\u300c\u6838\u5fc3\u4e3b\u984c\u300d\u540c\u300c\u5929\u8ce1\u8207\u9670\u5f71\u300d\u77b0\u3002',
-  '\u4e8b\u696d': '\u4f60\u5609\u4e8b\u696d\u66f2\u7dda\u4fc2\u6162\u4e0a\u5761\u2014\u2014\u571f\u661fRx 10\u5bae\u52a0MC\u91d1\u725b\u3002\u8a73\u60c5\u53bb\u300c\u5341\u5927\u9818\u57df\u300d\u540c\u300c\u6642\u9593\u7dda\u300d\u77b0\u3002',
-  '\u91d1\u9322': '\u98df\u50b7\u751f\u8ca1\u2014\u2014\u9760\u6280\u80fd\u5514\u9760\u6295\u8cc7\u3002\u8a73\u60c5\u7b56\u7565\u55ba\u300c\u4eba\u751f\u5730\u5716\u300d\u3002',
-  '\u611b\u60c5': '\u91d1\u661f\u707c\u50b7\u4ee3\u8868\u63a5\u6536\u611b\u5609\u80fd\u529b\u88ab\u81ea\u6211\u610f\u8b58\u906e\u853d\u3002\u8a73\u60c5\u55ba\u300c\u6838\u5fc3\u4e3b\u984c\u300d\u540c\u300c\u5341\u5927\u9818\u57df\u300d\u3002',
-  '\u5065\u5eb7': '\u9ad6\u8cea\u57fa\u8abf\u4fc2\u5bd2\u6fd5\u504f\u5f31\u3002\u6ce8\u610f\u813e\u80c3\u3001\u80dd\u81bd\u3001\u7cbe\u795e\u5065\u5eb7\u3002\u8a73\u60c5\u55ba\u300c\u5341\u5927\u9818\u57df\u300d\u3002',
-  '\u5927\u904b': '\u800c\u5bb6\u884c\u7dca\u620a\u620c\u5927\u904b\uff0822\u81f331\u6b72\uff09\u3002\u8a73\u60c5\u55ba\u300c\u6642\u9593\u7dda\u300d\u3002',
-  '\u8003\u8a66': '2026\u4e19\u5348\u5e74\u4fc2\u8003\u8a66\u9ec3\u91d1\u5e74\u3002\u8a73\u60c5\u55ba\u300c\u6642\u9593\u7dda\u300d\u3002',
-  '\u5929\u8ce1': '\u4e09\u5927\u5929\u8ce1\uff1a\u601d\u7dad\u6df1\u5ea6\u540c\u901f\u5ea6\u3001\u58d3\u529b\u4e2d\u6210\u9577\u5609\u97cc\u6027\u3001\u7368\u7279\u5609\u7cbe\u795e\u4e16\u754c\u3002\u8a73\u60c5\u55ba\u300c\u5929\u8ce1\u8207\u9670\u5f71\u300d\u3002',
-  '\u9670\u5f71': '\u4e09\u5927\u9670\u5f71\uff1a\u7528\u505a\u5609\u4ee3\u66ff\u5b58\u5728\u3001\u5547\u597d\u9ebb\u7167\u4eba\u3001\u55ba\u6700\u9700\u8981\u4eba\u5609\u9663\u63a8\u958b\u4eba\u3002\u8a73\u60c5\u55ba\u300c\u5929\u8ce1\u8207\u9670\u5f71\u300d\u3002'
+  '性格': '你嘅命局：己土日主孤立，食傷極旺（5次）代表你用不停產出嚟證明自己存在。詳情去「核心主題」同「天賦與陰影」。',
+  '事業': '事業曲線係慢上坡——土星Rx 10宮加MC金牛。2026丙午年係考試黃金年。詳情去「十大領域」同「時間線」。',
+  '金錢': '食傷生財——靠技能而唔靠投資。詳情去「人生地圖」。',
+  '愛情': '金星灼傷代表接收愛嘅能力被自我意識遮蔽。詳情去「核心主題」同「十大領域」。',
+  '健康': '體質基調係寒濕偏弱。注意脾胃、肝膽、精神健康。詳情去「十大領域」。',
+  '大運': '而家行緊戊戌大運（22至31歲）。詳情去「時間線」。',
+  '考試': '2026丙午年係考試黃金年。詳情去「時間線」。',
+  '天賦': '三大天賦：思維深度同速度、壓力中成長嘅韌性、獨特嘅精神世界。詳情去「天賦與陰影」。',
+  '陰影': '三大陰影：用做嘢代替存在、唔好麻煩人、喺最需要人嗰陣推開人。詳情去「天賦與陰影」。'
 };
 
 function initAI() {
@@ -206,7 +206,7 @@ function initAI() {
   function ask() {
     var q = input.value.trim();
     if (!q) return;
-    var answer = '\u4f60\u53ef\u4ee5\u8a66\u4e0b\u554f\uff1a\u6027\u683c\u3001\u4e8b\u696d\u3001\u91d1\u9322\u3001\u611b\u60c5\u3001\u5065\u5eb7\u3001\u5927\u904b\u3001\u8003\u8a66\u3001\u5929\u8ce1\u3001\u9670\u5f71\u3002';
+    var answer = '你可以試下問：性格、事業、金錢、愛情、健康、大運、考試、天賦、陰影。';
     var keys = Object.keys(AI_ANSWERS);
     for (var i = 0; i < keys.length; i++) {
       if (q.indexOf(keys[i]) !== -1) { answer = AI_ANSWERS[keys[i]]; break; }
@@ -225,14 +225,14 @@ function initFortune() {
   var today = new Date();
   var seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
   var fortunes = [
-    { energy: '\u706b\u571f\u65fa', advice: '\u4eca\u65e5\u9069\u5408\u8655\u7406\u91cd\u8981\u5609\u5de5\u4f5c\u9805\u76ee\u3002', lucky: '\u6a59\u8272\u3001\u5564\u8272' },
-    { energy: '\u91d1\u6c34\u65fa', advice: '\u4eca\u65e5\u6d88\u8017\u6703\u6bd4\u5e73\u6642\u5927\u3002', lucky: '\u7d05\u8272\u3001\u7d2b\u8272' },
-    { energy: '\u6728\u706b\u9f4a\u5230', advice: '\u4eca\u65e5\u4fc2\u4e00\u500b\u597d\u597d\u5609\u65e5\u5b50\u3002', lucky: '\u7da0\u8272\u3001\u7d05\u8272' },
-    { energy: '\u571f\u91d1\u5e73\u8861', advice: '\u4eca\u65e5\u80fd\u91cf\u4e2d\u7b49\u3002', lucky: '\u767d\u8272\u3001\u9280\u8272' },
-    { energy: '\u6c34\u6728\u65fa', advice: '\u4eca\u65e5\u601d\u7dad\u7279\u5225\u6d3b\u8e8d\u4f46\u8eab\u9ad4\u53ef\u80fd\u6bd4\u8f03\u6514\u3002', lucky: '\u85cd\u8272\u3001\u7da0\u8272' }
+    { energy: '火土旺', advice: '今日適合處理重要嘅工作項目。', lucky: '橙色、啡色' },
+    { energy: '金水旺', advice: '今日消耗會比平時大。', lucky: '紅色、紫色' },
+    { energy: '木火齊到', advice: '今日係一個好好嘅日子。', lucky: '綠色、紅色' },
+    { energy: '土金平衡', advice: '今日能量中等。', lucky: '白色、銀色' },
+    { energy: '水木旺', advice: '今日思維特別活躍。', lucky: '藍色、綠色' }
   ];
   var f = fortunes[seed % 5];
-  container.innerHTML = '<div style="margin-bottom:16px;font-size:1.1rem;font-weight:600;">' + today.toLocaleDateString('zh-Hant', { year: 'numeric', month: 'long', day: 'numeric' }) + '</div><div class="tag-row" style="margin-bottom:16px;"><span class="tag">' + f.energy + '</span></div><p style="margin-bottom:16px;">' + f.advice + '</p><p style="font-size:0.85rem;color:var(--text-muted);">\u4eca\u65e5\u5e78\u904b\u984f\u8272\uff1a' + f.lucky + '</p>';
+  container.innerHTML = '<div style="margin-bottom:16px;font-size:1.1rem;font-weight:600;">' + today.toLocaleDateString('zh-Hant', { year: 'numeric', month: 'long', day: 'numeric' }) + '</div><div class="tag-row" style="margin-bottom:16px;"><span class="tag">' + f.energy + '</span></div><p style="margin-bottom:16px;">' + f.advice + '</p><p style="font-size:0.85rem;color:var(--text-muted);">今日幸運顏色：' + f.lucky + '</p>';
 }
 
 // ============ PDF ============
@@ -249,7 +249,12 @@ function initFortuneScores() {
     var score = els[i].getAttribute('data-score');
     if (!score) continue;
     var filled = parseInt(score);
-    els[i].innerHTML = '\u2605'.repeat(filled) + '<span style="opacity:0.3;">' + '\u2605'.repeat(5 - filled) + '</span>';
+    var stars = '';
+    for (var s = 0; s < filled; s++) stars += '\u2605';
+    stars += '<span style="opacity:0.3;">';
+    for (var s2 = 0; s2 < 5 - filled; s2++) stars += '\u2605';
+    stars += '</span>';
+    els[i].innerHTML = stars;
   }
 }
 
@@ -268,93 +273,69 @@ function initSmoothScroll() {
 // ============ INJECT FLOATING STYLES ============
 function injectFloatingStyles() {
   var s = document.createElement('style');
-  s.textContent =
-    '.floating-buttons{position:fixed;bottom:24px;right:24px;display:flex;flex-direction:column;gap:12px;z-index:900}' +
-    '.fab{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:#1a1a1a;color:#f0ece4;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;box-shadow:0 4px 20px rgba(0,0,0,.5);opacity:0;transform:translateY(20px)}' +
-    '.fab.visible{opacity:1;transform:translateY(0)}' +
-    '.fab:hover{border-color:#e8c547;color:#e8c547;box-shadow:0 0 20px rgba(232,197,71,.3)}' +
-    '.fab-prompt{background:#e8c547;color:#000;border-color:#e8c547;font-size:1.3rem}' +
-    '.fab-prompt:hover{box-shadow:0 0 30px rgba(232,197,71,.4)}' +
-    '.prompt-overlay{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease}' +
-    '.prompt-overlay.open{opacity:1;pointer-events:all}' +
-    '.prompt-card{background:#1a1a1a;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:32px;max-width:680px;width:92%;max-height:90vh;overflow-y:auto;transform:translateY(20px);transition:transform .3s ease}' +
-    '.prompt-overlay.open .prompt-card{transform:translateY(0)}' +
-    '.prompt-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}' +
-    '.prompt-card-title{font-size:1.2rem;font-weight:600;color:#f0ece4}' +
-    '.prompt-close{background:none;border:none;color:#7a7570;font-size:1.5rem;cursor:pointer;padding:4px 8px}' +
-    '.prompt-textarea{width:100%;min-height:200px;background:#0d0d0d;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:16px;color:#f0ece4;font-family:monospace;font-size:.82rem;line-height:1.6;resize:vertical;outline:none}' +
-    '.prompt-textarea:focus{border-color:#e8c547}' +
-    '.prompt-copy-row{display:flex;align-items:center;gap:12px;margin:16px 0}' +
-    '.prompt-copy-btn{padding:10px 24px;background:#e8c547;color:#000;border:none;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer}' +
-    '.prompt-copied{font-size:.8rem;color:#e8c547;opacity:0;transition:opacity .3s ease}' +
-    '.prompt-copied.show{opacity:1}' +
-    '.prompt-divider{border:none;border-top:1px solid rgba(255,255,255,.1);margin:20px 0}' +
-    '.prompt-ai-label{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:#7a7570;margin-bottom:12px}' +
-    '.prompt-ai-buttons{display:flex;flex-wrap:wrap;gap:10px}' +
-    '.prompt-ai-btn{padding:10px 20px;background:#0d0d0d;border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#f0ece4;font-size:.85rem;text-decoration:none;transition:all .3s ease;cursor:pointer}' +
-    '.prompt-ai-btn:hover{border-color:#e8c547;color:#e8c547}';
+  s.textContent = [
+    '.floating-buttons{position:fixed;bottom:24px;right:24px;display:flex;flex-direction:column;gap:12px;z-index:900}',
+    '.fab{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:#1a1a1a;color:#f0ece4;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;box-shadow:0 4px 20px rgba(0,0,0,.5);opacity:0;transform:translateY(20px)}',
+    '.fab.visible{opacity:1;transform:translateY(0)}',
+    '.fab:hover{border-color:#e8c547;color:#e8c547}',
+    '.fab-prompt{background:#e8c547;color:#000;border-color:#e8c547;font-size:1.3rem}',
+    '.fab-prompt.visible{opacity:1;transform:translateY(0)}',
+    '.prompt-overlay{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease}',
+    '.prompt-overlay.open{opacity:1;pointer-events:all}',
+    '.prompt-card{background:#1a1a1a;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:32px;max-width:680px;width:92%;max-height:90vh;overflow-y:auto;transform:translateY(20px);transition:transform .3s ease}',
+    '.prompt-overlay.open .prompt-card{transform:translateY(0)}',
+    '.prompt-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}',
+    '.prompt-card-title{font-size:1.2rem;font-weight:600;color:#f0ece4}',
+    '.prompt-close{background:none;border:none;color:#7a7570;font-size:1.5rem;cursor:pointer;padding:4px 8px}',
+    '.prompt-textarea{width:100%;min-height:200px;background:#0d0d0d;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:16px;color:#f0ece4;font-family:monospace;font-size:.82rem;line-height:1.6;resize:vertical;outline:none}',
+    '.prompt-textarea:focus{border-color:#e8c547}',
+    '.prompt-copy-row{display:flex;align-items:center;gap:12px;margin:16px 0}',
+    '.prompt-copy-btn{padding:10px 24px;background:#e8c547;color:#000;border:none;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer}',
+    '.prompt-copied{font-size:.8rem;color:#e8c547;opacity:0;transition:opacity .3s ease}',
+    '.prompt-copied.show{opacity:1}',
+    '.prompt-divider{border:none;border-top:1px solid rgba(255,255,255,.1);margin:20px 0}',
+    '.prompt-ai-label{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:#7a7570;margin-bottom:12px}',
+    '.prompt-ai-buttons{display:flex;flex-wrap:wrap;gap:10px}',
+    '.prompt-ai-btn{padding:10px 20px;background:#0d0d0d;border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#f0ece4;font-size:.85rem;text-decoration:none;transition:all .3s ease;cursor:pointer}',
+    '.prompt-ai-btn:hover{border-color:#e8c547;color:#e8c547}'
+  ].join('');
   document.head.appendChild(s);
 }
 
 // ============ PROMPT GENERATOR ============
-var CHART_CONTEXT = '\u4f60\u4fc2\u4e00\u500b\u7cbe\u901a\u897f\u6d0b\u5360\u661f\u540c\u4e2d\u570b\u516b\u5b57\u547d\u7406\u5609\u8cc7\u6df1\u5206\u6790\u5e2b\u3002\u4ee5\u4e0b\u4fc2\u4e00\u500b\u4eba\u5609\u5b8c\u6574\u547d\u76e4\u6578\u64da\u3002\n\n\u3010\u51fa\u751f\u8cc7\u6599\u30112002\u5e741\u670811\u65e5 19:30 \u9999\u6e2f \u7537\n\n\u3010\u661f\u76e4\u3011ASC\u7345\u5b5012\u5ea6 MC\u91d1\u725b9\u5ea6\n\u592a\u967d\u6469\u7f9a21\u5ea6(6\u5bae) \u6708\u4eae\u5c04\u624b26\u5ea6(5\u5bae) \u6c34\u661f\u6c34\u74f610\u5ea6(6\u5bae)\n\u91d1\u661f\u6469\u7f9a20\u5ea6(6\u5bae\u707c\u50b7) \u706b\u661f\u96b9\u9b5a24\u5ea6(8\u5bae)\n\u6728\u661f\u5de8\u87f99\u5ea6Rx(11\u5bae\u66dc\u5347) \u571f\u661f\u96d9\u5b508\u5ea6Rx(10\u5bae)\n\u4e92\u6eb6\u6708\u4eae\u6728\u661f \u6700tight\u571f\u661f\u4e09\u5206\u6d77\u738b\u661f\n\n\u3010\u516b\u5b57\u3011\u8f9b\u5df3\u8f9b\u4e11\u5df1\u5367\u7678\u9149 \u767d\u881d\u91d1\n\u5df1\u571f\u8eab\u5f31\u559c\u706b\u571f \u98df\u50b75\u6b2133% \u6b63\u53701\u6b21(\u5df3\u85cf\u4e19\u6975\u5f31)\n\u504f\u5370\u6b63\u5b98\u6b63\u8ca1\u5b8c\u5168\u7f3a\u5e2d \u4e09\u5408\u91d1\u5c40\u5df3\u9149\u4e11 \u5367\u9149\u6c96\n\u3010\u5927\u904b\u3011\u620a\u620c22\u81f331\u6b72\u5168\u9762\u5e6b\u8eab\n\u3010\u6cd5\u9054\u3011\u6728\u6641\u6642\u4e3b\u52a0\u592a\u967d\u7d30\u9650(2025.6\u81f32027.3)\n\u3010\u592a\u967d\u5f27\u3011SA\u6708\u4eae\u5408\u672c\u547d\u592a\u967d0\u5ea628\u5206\n\u3010\u65e5\u8fd42026\u30117\u548c12\u5bae\u4e3b\u98db\u51658\u5bae';
+var CHART_CONTEXT = '你係一個精通西洋占星同中國八字命理嘅資深分析師。以下係一個人嘅完整命盤數據。\n\n【出生資料】2002年1月11日 19:30 香港 男\n\n【星盤】ASC獅子12度 MC金牛9度\n太陽摩羯21度(6宮) 月亮射手26度(5宮) 水星水瓶10度(6宮)\n金星摩羯20度(6宮灼傷) 火星雙魚24度(8宮)\n木星巨蟹9度Rx(11宮曜升) 土星雙子8度Rx(10宮)\n互溶月亮木星 最tight土星三分海王星\n\n【八字】辛巳辛丑己卯癸酉 白蠟金\n己土身弱喜火土 食傷5次33% 正印1次(巳藏丙極弱)\n偏印正官正財完全缺席 三合金局巳酉丑 卯酉沖\n華蓋太極貴人童子將星金神文昌亢宿值日\n\n【大運】戊戌22至31歲全面幫身\n【法達】木大時主加太陽細限(2025.6至2027.3)\n【太陽弧】SA月亮合本命太陽0度28分\n【日返2026】7和12宮主飛入8宮';
 
 var PAGE_PROMPTS = {
-  'index.html': '\u8acb\u505a\u6574\u9ad4\u547d\u76e4\u5206\u6790\u6982\u89bd\u3002',
-  'core.html': '\u8acb\u6df1\u5165\u5206\u6790\u4e94\u5927\u6838\u5fc3\u4e3b\u984c\u3002',
-  'gifts.html': '\u8acb\u5206\u6790\u4e09\u5927\u5929\u8ce1\u540c\u4e09\u5927\u9670\u5f71\u3002',
-  'domains.html': '\u8acb\u5206\u6790\u5341\u5927\u4eba\u751f\u9818\u57df\u3002',
-  'timeline.html': '\u8acb\u5206\u6790\u6642\u9593\u7dda\uff1a22\u81f331\u6b72\u9010\u5e74\u300118\u500b\u6708\u9810\u6e2c\u3001\u5927\u904b\u7e7f\u89bd\u3002',
-  'map.html': '\u8acb\u505a\u5b8c\u6574\u4eba\u751f\u5730\u5716\u7b56\u7565\u3002',
-  'data.html': '\u8acb\u89e3\u8b80\u539f\u59cb\u6578\u64da\u4e2d\u5609\u6838\u5fc3\u6a21\u5f0f\u3002'
+  'index.html': '請做整體命盤分析概覽。',
+  'core.html': '請深入分析五大核心主題。',
+  'gifts.html': '請分析三大天賦同三大陰影。',
+  'domains.html': '請分析十大人生領域。',
+  'timeline.html': '請分析時間線。',
+  'map.html': '請做完整人生地圖策略。',
+  'data.html': '請解讀原始數據。'
 };
 
 function initPromptGenerator() {
   var currentPage = location.pathname.split('/').pop() || 'index.html';
   var pageInstruction = PAGE_PROMPTS[currentPage] || PAGE_PROMPTS['index.html'];
-  var fullPrompt = CHART_CONTEXT + '\n\n\u3010\u5206\u6790\u8981\u6c42\u3011' + pageInstruction;
+  var fullPrompt = CHART_CONTEXT + '\n\n【分析要求】' + pageInstruction;
 
   var overlay = document.createElement('div');
   overlay.className = 'prompt-overlay';
-  overlay.innerHTML =
-    '<div class="prompt-card">' +
-      '<div class="prompt-card-header">' +
-        '<div class="prompt-card-title">\u63d0\u793a\u8a5e\u5df2\u751f\u6210</div>' +
-        '<button class="prompt-close">&times;</button>' +
-      '</div>' +
-      '<p style="font-size:0.85rem;color:#7a7570;margin-bottom:16px;">\u6492\u300c\u8907\u88fd\u300d\u7136\u5f8c\u63c0\u4e00\u500b AI \u5e73\u53f0\u8cbc\u4e0a\u53bb\u5f97\u3002</p>' +
-      '<textarea class="prompt-textarea" readonly></textarea>' +
-      '<div class="prompt-copy-row">' +
-        '<button class="prompt-copy-btn">\u8907\u88fd\u63d0\u793a\u8a5e</button>' +
-        '<span class="prompt-copied">&#x2713; \u5df2\u8907\u88fd</span>' +
-      '</div>' +
-      '<hr class="prompt-divider">' +
-      '<div class="prompt-ai-label">\u8cbc\u53bb\u908a\u500b AI\uff1f</div>' +
-      '<div class="prompt-ai-buttons">' +
-        '<a class="prompt-ai-btn" href="https://gemini.google.com" target="_blank">Gemini</a>' +
-        '<a class="prompt-ai-btn" href="https://chat.deepseek.com" target="_blank">DeepSeek</a>' +
-        '<a class="prompt-ai-btn" href="https://www.doubao.com" target="_blank">\u8c46\u5305</a>' +
-        '<a class="prompt-ai-btn" href="https://copilot.microsoft.com" target="_blank">Copilot</a>' +
-        '<a class="prompt-ai-btn" href="https://grok.com" target="_blank">Grok</a>' +
-      '</div>' +
-    '</div>';
+  overlay.innerHTML = '<div class="prompt-card"><div class="prompt-card-header"><div class="prompt-card-title">提示詞已生成</div><button class="prompt-close">&times;</button></div><p style="font-size:0.85rem;color:#7a7570;margin-bottom:16px;">撳「複製」然後揀一個 AI 平台貼上去。</p><textarea class="prompt-textarea" readonly></textarea><div class="prompt-copy-row"><button class="prompt-copy-btn">複製提示詞</button><span class="prompt-copied">&#x2713; 已複製</span></div><hr class="prompt-divider"><div class="prompt-ai-label">貼去邊個 AI？</div><div class="prompt-ai-buttons"><a class="prompt-ai-btn" href="https://gemini.google.com" target="_blank">Gemini</a><a class="prompt-ai-btn" href="https://chat.deepseek.com" target="_blank">DeepSeek</a><a class="prompt-ai-btn" href="https://www.doubao.com" target="_blank">豆包</a><a class="prompt-ai-btn" href="https://copilot.microsoft.com" target="_blank">Copilot</a><a class="prompt-ai-btn" href="https://grok.com" target="_blank">Grok</a></div></div>';
   document.body.appendChild(overlay);
 
   var textarea = overlay.querySelector('.prompt-textarea');
   textarea.value = fullPrompt;
-
   var copyBtn = overlay.querySelector('.prompt-copy-btn');
   var copiedEl = overlay.querySelector('.prompt-copied');
 
   function doCopy() {
     textarea.select();
+    try { document.execCommand('copy'); } catch(e) {}
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(textarea.value).then(showCopied).catch(function() {
-        document.execCommand('copy');
-        showCopied();
-      });
+      navigator.clipboard.writeText(textarea.value).then(showCopied).catch(showCopied);
     } else {
-      document.execCommand('copy');
       showCopied();
     }
   }
@@ -364,14 +345,8 @@ function initPromptGenerator() {
     setTimeout(function() { copiedEl.classList.remove('show'); }, 2000);
   }
 
-  function open() {
-    overlay.classList.add('open');
-    doCopy();
-  }
-
-  function close() {
-    overlay.classList.remove('open');
-  }
+  function open() { overlay.classList.add('open'); doCopy(); }
+  function close() { overlay.classList.remove('open'); }
 
   overlay.querySelector('.prompt-close').addEventListener('click', close);
   overlay.addEventListener('click', function(e) { if (e.target === overlay) close(); });
@@ -385,8 +360,8 @@ function initPromptGenerator() {
 function initBackToTop() {
   var btn = document.createElement('button');
   btn.className = 'fab';
-  btn.innerHTML = '&#x2191;';
-  btn.title = '\u56de\u5230\u9802\u90e8';
+  btn.innerHTML = '&uarr;';
+  btn.title = '回到頂部';
   btn.addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
@@ -403,7 +378,7 @@ function initFloatingButtons() {
   var promptFab = document.createElement('button');
   promptFab.className = 'fab fab-prompt visible';
   promptFab.innerHTML = '&#x2728;';
-  promptFab.title = '\u751f\u6210\u63d0\u793a\u8a5e';
+  promptFab.title = '生成提示詞';
   promptFab.addEventListener('click', openPrompt);
   container.appendChild(topBtn);
   container.appendChild(promptFab);
